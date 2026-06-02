@@ -6,7 +6,7 @@ from datetime import datetime
 # =============================================
 #  CONFIGURATION — remplis ces deux valeurs
 # =============================================
-TOKEN      = os.getenv("DISCORD_TOKEN", "MTUxMTM4ODcxMzU1NTU5NTM4NA.GhwiEf.Hma4BVlOXEfb7GGrUh2mB9_v0HK8ph5kbfFAq0")
+TOKEN      = os.getenv("DISCORD_TOKEN")
 CHANNEL_ID = int(os.getenv("CHANNEL_ID", "1511384702731157577"))
 # =============================================
 
