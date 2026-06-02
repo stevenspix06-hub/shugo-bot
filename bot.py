@@ -4,7 +4,7 @@ import os
 from datetime import datetime
 
 # =============================================
-#  CONFIGURATION — remplis ces deux valeurs
+#  CONFIGURATION
 # =============================================
 TOKEN      = os.getenv("DISCORD_TOKEN")
 CHANNEL_ID = int(os.getenv("CHANNEL_ID", "1511384702731157577"))
@@ -15,11 +15,12 @@ client  = discord.Client(intents=intents)
 
 @tasks.loop(minutes=1)
 async def check_time():
-    now = datetime.utcnow()  # UTC — ajuste si ton serveur est en heure locale
+    now = datetime.utcnow()
     if now.minute == 55:
         channel = client.get_channel(CHANNEL_ID)
         if channel:
-            await channel.send("@everyone c'est l'heure des shugo !")
+            file = discord.File("shugo.jpg")
+            await channel.send("@everyone C'est l'heure des Shugo, prépare-toi !!", file=file)
 
 @client.event
 async def on_ready():
