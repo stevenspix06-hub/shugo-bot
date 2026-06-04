@@ -33,7 +33,7 @@ async def check_time():
             channel = client.get_channel(channel_id)
             if channel:
                 file = discord.File("shugo.jpg")
-                await channel.send("@everyone C'est l'heure des Shugo, prépare-toi !!", file=file)
+                await channel.send("C'est l'heure des Shugo, prépare-toi !!", file=file)
 
 @client.event
 async def on_message(message):
